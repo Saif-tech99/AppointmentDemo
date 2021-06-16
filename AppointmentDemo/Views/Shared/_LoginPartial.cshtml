@@ -1,0 +1,21 @@
+﻿
+@inject Microsoft.AspNetCore.Identity.SignInManager<Microsoft.AspNetCore.Identity.IdentityUser> signInManager
+
+@if (signInManager.IsSignedIn(User))
+{
+
+}
+else
+{
+<ul class="nav navbar-nav">
+    <li class="nav-item text-white">
+    @*@Html.ActionLink("Sign Up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })*@
+        <a class="nav-link" id="registerLink" asp-controller="Account" asp-action="Register">Register</a>
+    </li>
+    <li>
+        @*@Html.ActionLink("Sign In", "Register", "Account", routeValues: null, htmlAttributes: new { id = "LoginLink" })*@
+
+        <a class="nav-link" id="LoginLink" asp-controller="Account" asp-action="Login">Login</a>
+    </li>
+</ul>
+}
